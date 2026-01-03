@@ -1,23 +1,24 @@
 typedef enum logic [6:0] {
-    LUI     = 7'b0110111,
-    AUIPC   = 7'b0010111,
-    JAL     = 7'b1101111,
+    // TODO: separate by type (S, J, etc)
+    LUI     = 7'b0110111, // S
+    AUIPC   = 7'b0010111, // S
+    JAL     = 7'b1101111, // jump ==
     JALR    = 7'b1100111,
     BEQ     = 7'b1100011,
     BNE     = 7'b1100011,
     BLT     = 7'b1100011,
     BGE     = 7'b1100011,
     BLTU    = 7'b1100011,
-    BGEU    = 7'b1100011,
-    LB      = 7'b0000011,
+    BGEU    = 7'b1100011, // ===
+    LB      = 7'b0000011, // Load ==
     LH      = 7'b0000011,
     LW      = 7'b0000011,
     LBU     = 7'b0000011,
-    LHU     = 7'b0000011,
-    SB      = 7'b0100011,
+    LHU     = 7'b0000011, //  ==
+    SB      = 7'b0100011, // Store ==
     SH      = 7'b0100011,
-    SW      = 7'b0100011,
-    ADDI    = 7'b0010011,
+    SW      = 7'b0100011, // ==
+    ADDI    = 7'b0010011, // Add ==
     SLTI    = 7'b0010011,
     SLTIU   = 7'b0010011,
     XORI    = 7'b0010011,
@@ -25,8 +26,8 @@ typedef enum logic [6:0] {
     ANDI    = 7'b0010011,
     SLLI    = 7'b0010011,
     SRLI    = 7'b0010011,
-    SRAI    = 7'b0010011,
-    ADD     = 7'b0110011,
+    SRAI    = 7'b0010011, // ==
+    ADD     = 7'b0110011, // R
     SUB     = 7'b0110011,
     SLL     = 7'b0110011,
     SLT     = 7'b0110011,
@@ -35,7 +36,7 @@ typedef enum logic [6:0] {
     SRL     = 7'b0110011,
     SRA     = 7'b0110011,
     OR      = 7'b0110011,
-    AND     = 7'b0110011
+    AND     = 7'b0110011 // ==
 } opcode_t;
 
 typedef enum logic [2:0] {
