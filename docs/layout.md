@@ -5,11 +5,32 @@
 
 Inputs:
 - Register select (5-bits)
-- Register read/write (1-bit)
-- Register enable (1-bit)
+- Register read/write enable (1-bit)
 - Register write data (32-bits)
+- Clock, Reset
 
 Outputs:
 - Register read data (32-bits)
 
 ## ALU
+
+Inputs:
+- inA, inB
+- Opcodes
+
+Outputs:
+- Out
+- Condition Codes
+
+## Memory
+
+Inputs: 
+- Address select 
+- Read/write enable
+- Clock, Reset
+
+Inout:
+- Read/write data
+
+## FSM and Datapath
+Includes everything
