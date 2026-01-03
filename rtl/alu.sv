@@ -1,13 +1,3 @@
-// ## ALU
-
-// Inputs:
-// - inA, inB
-// - Opcodes, funct3, funct7
-
-// Outputs:
-// - Out
-// - Condition Codes
-
 module alu #(
     parameter int WIDTH = 32
 )
@@ -18,7 +8,10 @@ module alu #(
     input  funct7_t funct7,
 
     output cc_t condCodes
+    output logic [WIDTH-1:0] out
 );
 
-    
+    case (opcode)
+
+    endcase
 endmodule: alu
