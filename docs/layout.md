@@ -34,3 +34,7 @@ Inout:
 
 ## FSM and Datapath
 Includes everything
+Including:
+- Instruction parsing
+- Interconnects between modules
+- Exposing control/status points
