@@ -86,3 +86,30 @@ typedef enum logic [6:0] {
     OR_FUNCT7   = 7'b0000000,
     AND_FUNCT7  = 7'b0000000
 } funct7_t;
+
+typedef enum logic {
+    ZERO_CC = 1'b1,
+    NO_ZERO_CC = 1'b0
+} zero_cc_t;
+
+typedef enum logic {
+    NEG_CC = 1'b1;
+    NO_NEG_CC = 1'b0;
+} neg_cc_t;
+
+typedef enum logic {
+    CARRY_CC = 1'b1,
+    NO_CARRY_CC = 1'b0
+} carry_cc_t;
+
+typedef enum logic {
+    OVER_CC = 1'b1,
+    NO_OVER_CC = 1'b0
+} over_cc_t;
+
+typedef struct packed {
+    zero_cc_t z;
+    neg_cc_t n;
+    carry_cc_t c;
+    over_cc_t v;
+} cc_t;
