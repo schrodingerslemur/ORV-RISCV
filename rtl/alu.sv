@@ -7,7 +7,7 @@ module alu #(
     input  funct3_t funct3,
     input  funct7_t funct7,
 
-    output cc_t condCodes
+    output cc_t condCodes,
     output logic [WIDTH-1:0] out
 );
 
