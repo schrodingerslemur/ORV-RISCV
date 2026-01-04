@@ -1,5 +1,13 @@
 typedef enum logic [6:0] {
     // TODO: separate by type (S, J, etc)
+    U = 7'b0110111,
+    J = 7'b1101111,
+    B = 7'b1100011,
+    L = 7'b0000011,
+    S = 7'b0100011,
+    I = 7'b0010011,
+    R = 7'b0110011
+    
     LUI     = 7'b0110111, // S
     AUIPC   = 7'b0010111, // S
     JAL     = 7'b1101111, // jump ==
