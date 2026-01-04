@@ -23,8 +23,10 @@ module registers #(
 
     logic [WIDTH-1:0] regFile [32];
 
-    always_ff @(posedge clock) begin
-        if (wr_en)
+    always_ff @(posedge clock, posedge reset) begin
+        if (reset)
+            regFile <= '0;
+        else if (wr_en)
             regFile[sel_rd] <= wr_data;
     end
 
