@@ -4,13 +4,13 @@
 32 general purpose 32-bit registers (R0-R31). R0 is hardwired to zero.
 
 Inputs:
-- Register select (5-bits)
-- Register read/write enable (1-bit)
+- Register select (5-bits) x 2 (which to read/write)
+- Register write enable (1-bit)
 - Register write data (32-bits)
 - Clock, Reset
 
 Outputs:
-- Register read data (32-bits)
+- Register read data (32-bits) x 2
 
 ## ALU
 
