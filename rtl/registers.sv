@@ -11,9 +11,8 @@
 // - Register read data (32-bits) x 2
 
 module registers #(
-    parameter int WIDTH = 32,
-)
-(
+    parameter int WIDTH = 32
+) (
     input  logic [4:0] sel_rd, sel_rs1, sel_rs2,
     input  logic wr_en,
     input  logic [WIDTH-1:0] wr_data,
@@ -21,4 +20,15 @@ module registers #(
 
     output logic [WIDTH-1:0] rs1_data, rs2_data
 );
+
+    logic [WIDTH-1:0] regFile [32];
+
+    always_ff @(posedge clock) begin
+        if (wr_en)
+            regFile[sel_rd] <= wr_data;
+    end
+
+    assign rs1_data = regFile[sel_rs1];
+    assign rs2_data = regFile[sel_rs2];
+
 endmodule: registers
